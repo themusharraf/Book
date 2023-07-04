@@ -18,7 +18,7 @@ class Book(models.Model):
     images = models.ImageField(upload_to='images/', validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])])
     pdf = models.FileField(upload_to='pdf/', validators=[FileExtensionValidator(['pdf'])])
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    year = models.DateField()
+    year = models.SmallIntegerField()
     price = models.PositiveIntegerField(blank=True, null=True)
     view_count = models.PositiveIntegerField(default=0)
     page_count = models.PositiveIntegerField(default=0)
