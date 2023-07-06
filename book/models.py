@@ -1,5 +1,4 @@
 from PyPDF2 import PdfReader
-from django.contrib.auth.models import User
 from django.core.validators import FileExtensionValidator
 from django.db import models
 
@@ -30,5 +29,5 @@ class Book(models.Model):
             return len(pdf_reader.pages)
 
     def save(self, *args, **kwargs):
-        self.page_count = self.count_pages()
+        # self.page_count = self.count_pages()
         super().save(*args, **kwargs)

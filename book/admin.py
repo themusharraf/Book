@@ -29,7 +29,7 @@ class BookAdmin(admin.ModelAdmin):
     fields = ('title', 'category', 'author', 'pdf', 'year',)
 
     def get_pdf(self, obj: Book):
-        return mark_safe(f'<a href="{obj.pdf.url}" target="_blank">Show Pdf</a>')
+        return mark_safe(f'<button style="background: #79aec8;border: none;border-radius: 30px"><a style="color: white" href="{obj.pdf.url}" target="_blank">Show Pdf</a></button>')
 
 
 admin.site.register(Category)
